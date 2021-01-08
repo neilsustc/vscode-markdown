@@ -319,6 +319,12 @@ function onWillSave(e: TextDocumentWillSaveEvent) {
     }
 }
 
+function isAtxHeading(lineText: String): Boolean {
+    return lineText.trim().startsWith('#')
+        && !lineText.startsWith('    ')  //// The opening `#` character may be indented 0-3 spaces
+        && lineText.includes('# ')
+}
+
 /**
  * Updates `tocConfig` and `docConfig`.
  * @param editor The editor, from which we detect `docConfig`.
@@ -370,6 +376,7 @@ export function buildToc(doc: TextDocument): IHeading[] {
         //// Transform setext headings to ATX headings
         if (
             i < arr.length - 1
+            && !isAtxHeading(lineText) //// #879
             && lineText.match(/^ {0,3}\S.*$/)
             && lineText.replace(/[ -]/g, '').length > 0  //// #629
             && arr[i + 1].match(/^ {0,3}(=+|-{2,}) *$/)
@@ -387,9 +394,7 @@ export function buildToc(doc: TextDocument): IHeading[] {
 
     const toc = lines.map((lineText, index) => {
         if (
-            lineText.trim().startsWith('#')
-            && !lineText.startsWith('    ')  //// The opening `#` character may be indented 0-3 spaces
-            && lineText.includes('# ')
+            isAtxHeading(lineText)
             && !lineText.includes('&lt; omit in toc &gt;')
         ) {
             lineText = lineText.replace(/^ +/, '');

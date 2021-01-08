@@ -296,6 +296,24 @@ suite("TOC.", () => {
             new Selection(16, 15, 16, 15)).then(done, done);
     });
 
+    test("ATX Heading followed by thematic break doesn't get parsed as a setext heading", done => {
+        testCommand('markdown.extension.toc.create', {},
+            [
+                '# H1',
+                '---',
+                '',
+                '',
+            ],
+            new Selection(3, 0, 3, 0),
+            [
+                '# H1',
+                '---',
+                '',
+                '- [H1](#h1)',
+            ],
+            new Selection(3, 10, 3, 10)).then(done, done);
+    });
+
     test("Non-Latin symbols (Option `toc.slugifyMode: github`)", done => {
         testCommand('markdown.extension.toc.create',
             {
