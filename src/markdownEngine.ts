@@ -223,6 +223,10 @@ class MarkdownEngine implements IDynamicMarkdownEngine {
             katexOptions['macros'] = userMacros;
         }
 
+        let taskListOptions = {
+            enabled: vscode.workspace.getConfiguration('markdown.extension.print').get<boolean>('enableCheckBoxes', false)
+        };
+
         md = new MarkdownIt({
             html: true,
             highlight: (str: string, lang?: string) => {
@@ -238,7 +242,7 @@ class MarkdownEngine implements IDynamicMarkdownEngine {
 
         // contributions provided by this extension must be processed specially,
         // since this extension may not finish activing when a engine is needed to be created.
-        md.use(mdtl).use(mdkt, katexOptions);
+        md.use(mdtl, taskListOptions).use(mdkt, katexOptions);
 
         if (!vscode.workspace.getConfiguration('markdown.extension.print').get<boolean>('validateUrls', true)) {
             md.validateLink = () => true;

@@ -331,6 +331,11 @@
                     "default": true,
                     "description": "%config.print.includeVscodeStylesheets%"
                 },
+                "markdown.extension.print.enableCheckBoxes": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%config.print.enableCheckBoxes%"
+                },
                 "markdown.extension.print.onFileSave": {
                     "type": "boolean",
                     "default": false,

@@ -17,6 +17,7 @@ type KnownKey =
     | "print.absoluteImgPath"
     | "print.imgToBase64"
     | "print.includeVscodeStylesheets"
+    | "print.enableCheckBoxes"
     | "print.onFileSave"
     | "print.theme"
     | "print.validateUrls"

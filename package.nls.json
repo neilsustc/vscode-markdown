@@ -29,6 +29,7 @@
     "config.print.absoluteImgPath.description": "Convert image path to absolute path.",
     "config.print.imgToBase64.description": "Convert images to base64 when printing to HTML.",
     "config.print.includeVscodeStylesheets": "Include VS Code's basic Markdown styles so that the exported HTML looks similar as inside VS Code.",
+    "config.print.enableCheckBoxes": "Enable checkboxes in the exported HTML.",
     "config.print.onFileSave.description": "Print current document to HTML when file is saved.",
     "config.print.theme": "Theme of the exported HTML. Only affects code blocks.",
     "config.print.validateUrls.description": "Enable/disable URL validation when printing.",

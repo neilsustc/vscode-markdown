@@ -219,6 +219,7 @@ Tip: also support the option `completion.root`
 | `markdown.extension.print.onFileSave`                      | `false`    | Print to HTML on file save                                                                       |
 | `markdown.extension.print.theme`                           | `light`    | Theme of the exported HTML                                                                       |
 | `markdown.extension.print.validateUrls`                    | `true`     | Enable/disable URL validation when printing                                                      |
+| `markdown.extension.print.enableCheckBoxes`                | `false`    | Enable/disable The checkboxes of task lists                                                      |
 | `markdown.extension.syntax.decorations`                    | `true`     | Add decorations to ~~strikethrough~~ and `code span`                                             |
 | `markdown.extension.syntax.decorationFileSizeLimit`        | 50000      | Don't render syntax decorations if a file is larger than this size (in byte/B)                   |
 | `markdown.extension.syntax.plainTheme`                     | `false`    | A distraction-free theme                                                                         |
