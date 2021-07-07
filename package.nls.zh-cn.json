@@ -10,6 +10,7 @@
     "command.editing.toggleMath.title": "触发数学环境",
     "command.editing.toggleMathReverse.title": "触发数学环境（反向）",
     "command.editing.toggleList.title": "触发列表",
+    "command.editing.toggleQuote.title": "触发引用",
     "config.title": "Markdown All in One",
     "config.italic.indicator.description": "使用 `*` 或 `_` 包围斜体文本。",
     "config.katex.macros.description": "自定义 KaTeX 宏。",

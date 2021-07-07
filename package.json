@@ -97,6 +97,11 @@
                 "category": "Markdown All in One"
             },
             {
+                "command": "markdown.extension.editing.toggleQuote",
+                "title": "%command.editing.toggleQuote.title%",
+                "category": "Markdown All in One"
+            },
+            {
                 "command": "markdown.extension.editing.toggleMath",
                 "title": "%command.editing.toggleMath.title%",
                 "category": "Markdown All in One"
